@@ -1,0 +1,19 @@
+.photo{
+    margin-top: 200px;
+    background-color:#13294B;
+
+    /* background-color:#36412fda; */
+    color: white;
+}
+.image{
+    margin-top: -60px;
+    border: 5px solid white ;
+    border-radius: 50%;
+}
+
+.uplaodbtn{
+    background-color: rgb(25, 205, 25);
+    color: white;
+    font-size: larger;
+    border: 2px solid white;
+}

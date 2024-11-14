@@ -1,0 +1,64 @@
+body{
+    background-color:white !important;
+}
+.navbar{
+    background-color:#13294B;
+    width:100%;
+    font-size: large;
+    position: fixed;
+    top: 0px;
+    opacity:1;
+    color: white;
+    text-align: left;
+    border-radius: 4px;
+    display: flex;
+    opacity: 0.9;
+}
+.title{
+    padding-left: 20px;
+}
+.profile{
+    display: flex;
+    background-color: white;
+    margin-left:77%;
+  margin-top: 19px;
+  margin-bottom: 19px;
+  color:  #36412F;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.prourl{
+    height: 30px !important;
+    width: 30px !important;
+    margin-top: 13px;
+    border-radius: 12px !important;
+    border: 2px solid gray;
+
+}
+.dropdown{
+    /* background-color: #36412fda; */
+    background-color:#13294B;
+
+    width: 150px;
+    margin-left: 92.5%;
+    color: white;
+    position: fixed;
+    top: 90px;
+    right: 20px;
+   height: 34%;
+}
+.admindash{
+    font-size:6px !important;
+}
+.list{
+    color: azure;
+    text-decoration: none;
+    font-size: larger;
+}
+.profileimg{
+    width:40px ;
+    height: 40px;
+}
+

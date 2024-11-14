@@ -1,0 +1,135 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #4A4A4A; /* General Text Color */
+  background-color: #FFFFFF; /* Background Color */
+  text-align: center !important;
+}
+
+
+.form{
+    border: 2px solid gray;
+    background-color: white;
+    height: 600px;
+    width:700px;
+    position: fixed;
+    top: 70px;
+    left: 30%;
+    text-align: center;
+    border-radius: 4px;
+}
+input{
+    width:600px;
+    height: 30px;
+    margin-top: 30px;
+    margin-right: 10px;
+}
+.updatebtn{
+  background-color: green !important;
+  color: white;
+  width:100px;
+}
+.updatebtn:hover{
+font-size: medium;
+}
+textarea{
+  width:600px;
+  height: 30px;
+  margin-top: 30px;
+  margin-right: 10px;
+}
+#catagory{
+  width:600px;
+  height: 30px;
+  margin-top: 30px;
+  margin-right: 10px;
+}
+.alert{
+  color: blue;
+}
+.table{
+  border: 2px solid hsla(0, 0%, 50%, 0.09);
+  margin-top: 170px !important;
+  margin-left: 30px !important;
+  margin-right: 30px !important;
+
+}
+table {
+  border: 2px solid hsla(0, 0%, 50%, 0.499);
+
+    font-family: arial, sans-serif;
+    border-collapse: collapse !important;
+    width: 100%;
+    background-color: #FFFFFF; /* Table Row Background */
+
+  }
+  .opcity {
+    opacity:0.3;
+  }
+  .p{
+    font-size:30px !important;
+    margin-bottom: 0% !important;
+    margin-top: 0% !important;
+    margin-right: 0% !important;
+    padding-left: 95% !important;
+  }
+  th {
+    color: #424242; /* Charcoal Gray for Table Headers */
+    background-color: #F5F5F5; /* Light Background for Header Row */
+    padding: 10px;
+    text-align: center !important;
+    border-bottom: 1px solid #E0E0E0;
+}
+.formimg{
+  height: 50px !important;
+  width: 50px !important;
+}
+td {
+    color: #4A4A4A; /* Dark Gray for Table Content Text */
+    padding: 10px;
+    border-bottom: 1px solid #E0E0E0;
+}
+  tr:nth-child(odd) {
+    background-color: #F5F5F5; /* Light Background for Header Row */
+
+  }
+  
+  .input{
+   width: 50px;
+  }
+  .myStyle{
+    display: none !important;
+  }
+  .new{
+    height: 40px;
+    width: 100px !important;
+    margin-left: 93%;
+    opacity: 0.6;
+    border: none;
+   font-weight: lighter;
+  }
+  .new:hover{
+    border:2px solid #424242 !important;
+    font-weight: bolder;
+  }
+  .editbtn{
+    background-color: rgba(0, 128, 0, 0.463);
+    color: white;
+  }
+  .editbtn:hover{
+    font-size: medium;
+  }
+  .deletebtn{
+    background-color:gray;
+    color: white;
+  }
+  .deletebtn:hover{
+    font-size: medium;
+
+  }
+  h4{
+    margin-bottom: -5% !important;
+  }
+  .header{
+    margin-top: 100px !important;
+    margin-bottom:-10% !important;
+  }
