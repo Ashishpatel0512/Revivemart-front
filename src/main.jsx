@@ -22,6 +22,7 @@ import Block from "./component/Block";
 import Resister from "./component/Resister";
 import Logout from "./component/logout";
 import Error from "./component/error";
+import Unblock from "./component/unblock";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -91,6 +92,11 @@ const router = createBrowserRouter([
   {
     path: "/block/:userid",
     element: <Block />
+
+  },
+  {
+    path: "/unblock/:userid",
+    element: <Unblock/>
 
   },
   {

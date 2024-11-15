@@ -125,11 +125,11 @@ console.log(descriptions)
         <div>
             <h1>Edit</h1>
         <form onSubmit={handleSubmit} className="form">
-            <input type="text" name='name' value={names==null?data.name:names}  onChange={Name} /><br />
-            <input type="text" name='description' value={descriptions==null?data.description:descriptions} onChange={description} /><br />
-            <input type="text" name='price' value={prices==null?data.price:prices} onChange={price} /><br />
-            <input type="text" name='age'   value={ages==null?data.age:ages}  onChange={age} /><br />
-            <input type="text" name='location' value={locations==null?data.location:locations} onChange={location}/><br />
+            <input type="text" name='name' value={names==null?data.name:names}  onChange={Name} required/><br />
+            <input type="text" name='description' value={descriptions==null?data.description:descriptions} onChange={description} required/><br />
+            <input type="text" name='price' value={prices==null?data.price:prices} onChange={price} required/><br />
+            <input type="text" name='age'   value={ages==null?data.age:ages}  onChange={age} required/><br />
+            <input type="text" name='location' value={locations==null?data.location:locations} onChange={location}required/><br />
             <select name="catagory" id="catagory" onChange={catagory}>
              <option value="Funicher">Funicher</option>
              <option value="Electronic">Electronic</option>
@@ -137,9 +137,9 @@ console.log(descriptions)
              <option value="Other">Other</option>
              </select><br />
              <select name="other" id="catagory" onChange={other}>
-             <option value="warenty">warenty</option>
-             <option value="gerenty">gerenty</option>
-             <option value="warenty-gerenty">warenty-gerenty</option>
+             <option value="Warranty">Warranty</option>
+             <option value="Guaranty">Guaranty</option>
+             <option value="Warranty-Guaranty">Warranty-Guaranty</option>
              </select><br />
             {/* <input type="text" name='other'value={others==null?data.other:others} onChange={other} /><br /> */}
             {/* <img src={url} alt="" className="formimg" /><br /> */}

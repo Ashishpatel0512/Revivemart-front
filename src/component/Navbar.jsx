@@ -18,7 +18,7 @@ function Navbar({user,url}){
         
         <>
         <div className='navbar'>
-            <h1 className='title'>ReviveMart</h1>
+            <h1 className='title'>  <Link to={"/home"} className='title'> ReviveMart</Link></h1>
             <div className='profile' >
             <img src={url} alt="" className='prourl' />&nbsp;&nbsp;
             <p onClick={display}>{user.name}</p>

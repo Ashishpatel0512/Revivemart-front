@@ -59,11 +59,11 @@ function Mybids(){
        <th scope="row"><img src={data.Productid.image[0].url} alt=""  height="30px" width="30px"/></th>
               <td>{data.Productid.name}</td>
               <td>{data.createAt}</td>
-              <td>{data.seller}</td>
+              <td>{data.Productid.User[0].name}</td>
               <td>{data.Productid.price}</td>
               <td>{data.bidamount}</td>
               <td>{data.message}</td>
-              <td>{data.contact } <br /> {data.buyer}</td>
+              <td>{data.contact } <br /> {data.User[0].name}</td>
   
       </tr>
       ))}

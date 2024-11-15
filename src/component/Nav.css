@@ -16,11 +16,14 @@ body{
 }
 .title{
     padding-left: 20px;
+    text-decoration: none;
+    color: white !important;
+    cursor: pointer;
 }
 .profile{
     display: flex;
     background-color: white;
-    margin-left:77%;
+    margin-left:75%;
   margin-top: 19px;
   margin-bottom: 19px;
   color:  #36412F;

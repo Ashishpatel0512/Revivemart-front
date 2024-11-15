@@ -177,11 +177,11 @@ useEffect(()=>{
         <form onSubmit={handleSubmit} className='form myStyle'>
             <h4>New product</h4>
             <p onClick={showform} className='p'>&times;</p>
-            <input type="text" name='name' placeholder='ENTER PRODUCT NAME..'  onChange={Name} /><br />
-            <textarea name="description"placeholder='ENTER PRODUCT DESCRIPTION..' onChange={description}></textarea><br />
-            <input type="text" name='price' placeholder='ENTER PRODUCT PRICE..'onChange={price} /><br />
-            <input type="text" name='age'placeholder='ENTER PRODUCT HOW MANY OLD..' onChange={age} /><br />
-            <input type="text" name='location' placeholder='ENTER LOCATION..'  onChange={location}/><br />
+            <input type="text" name='name' placeholder='ENTER PRODUCT NAME..'  onChange={Name} required/><br />
+            <textarea name="description"placeholder='ENTER PRODUCT DESCRIPTION..' onChange={description}  required></textarea><br />
+            <input type="text" name='price' placeholder='ENTER PRODUCT PRICE..'onChange={price}  required/><br />
+            <input type="text" name='age'placeholder='ENTER PRODUCT HOW MANY OLD..' onChange={age}  required/><br />
+            <input type="text" name='location' placeholder='ENTER LOCATION..'  onChange={location} required/><br />
             <select name="catagory" id="catagory" onChange={catagory}>
              <option value="Funicher">Funicher</option>
              <option value="Electronic">Electronic</option>
@@ -189,9 +189,9 @@ useEffect(()=>{
              <option value="Other">Other</option>
              </select><br />
              <select name="other" id="catagory" onChange={other}>
-             <option value="warenty">warenty</option>
-             <option value="gerenty">gerenty</option>
-             <option value="warenty-gerenty">warenty-gerenty</option>
+             <option value="Warranty">Warranty</option>
+             <option value="Guaranty">Guaranty</option>
+             <option value="Warranty-Guaranty">Warranty-Guaranty</option>
              </select><br />
             {/* <input type="text" name='other' onChange={other} /><br /> */}
             <input type="file" onChange={handleFileChange}  /><br />

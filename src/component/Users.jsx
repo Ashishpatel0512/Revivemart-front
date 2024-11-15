@@ -55,8 +55,11 @@ function Users(){
               <td>{data.name}</td>
               <td>{data.emailid}</td>
               <td>{data.status}</td>
-              <td><button className="deletebtn"><Link to={`/block/${data._id}/` } className="deletebtn">Block</Link></button></td>
-
+              <td>
+                <button className="deletebtn"><Link to={`/block/${data._id}/` } className="deletebtn">Block</Link></button>&nbsp; &nbsp;
+                <button className="deletebtn"><Link to={`/unblock/${data._id}/` } className="deletebtn">Unlock</Link></button>
+            </td>
+\
       </tr>
       ))}
   
