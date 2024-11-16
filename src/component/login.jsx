@@ -64,6 +64,7 @@ function Login() {
         <br /><br />
         <button type="submit" className="logbtn">Login</button><br />
         <Link to={"/resister"} >Register</Link><br />
+        <Link to={"/forgot"} >Forgot-password</Link><br />
 
       </form>}
       </div>    

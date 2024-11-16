@@ -23,6 +23,7 @@ import Resister from "./component/Resister";
 import Logout from "./component/logout";
 import Error from "./component/error";
 import Unblock from "./component/unblock";
+import Forgot from "./component/forgot";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
   {
     path: "/logout",
     element: <Logout />
+
+  },
+  {
+    path: "/forgot",
+    element: <Forgot />
 
   },
   {
