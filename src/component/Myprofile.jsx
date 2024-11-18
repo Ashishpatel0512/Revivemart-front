@@ -8,6 +8,9 @@ function Myprofile() {
     const [image, setimage] = useState(null);
     const [file, setFile] = useState(null);
     const [url,seturl]=useState([]);
+    const [names, Changname] = useState(null);
+    const [emails, Changemail] = useState(null);
+
 
 
 
@@ -29,13 +32,34 @@ function Myprofile() {
             });
     }, [])
 
-
+    const Name = (e) => {
+        const selectedFile = e.target.value;
+        Changname(selectedFile)
+        console.log("Selected file:", selectedFile); // Debug: check if the file is selected
+    };
+    const email = (e) => {
+        const selectedFile = e.target.value;
+        Changemail(selectedFile)
+        console.log("Selected file:", selectedFile); // Debug: check if the file is selected
+    };
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
         setFile(selectedFile);
         console.log("Selected file:", selectedFile); // Debug: check if the file is selected
     };
 
+    const showform = async (e) => {
+        const form=document.querySelector(".form").classList.toggle("myStyle");;
+        console.log(form)
+      //   table.style.opacity="0.2"
+        }
+        const uploadimage = async (e) => {
+            const form=document.querySelector(".upload").classList.toggle("myStyle");;
+            console.log(form)
+            }
+
+
+        
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(file)
@@ -50,6 +74,29 @@ function Myprofile() {
                     }
             });
             alert("File uploaded successfully");
+            const form=document.querySelector(".upload").classList.toggle("myStyle");;
+
+            Navigate("/myprofile")
+        
+    }
+    const handleprofile = async (e) => {
+        e.preventDefault();
+        
+        /* updating title of product with id 1 */
+fetch('http://localhost:3001/change/profile', {
+  method: 'POST', /* or PATCH */
+  headers: { 'Content-Type': 'application/json',       
+     "Authorization":localStorage.getItem("token")
+  },
+  body: JSON.stringify({
+    "name":names||data.name,
+    "emailid":emails||data.emailid
+  })
+})
+.then(res => res.json())
+.then(console.log);
+const form=document.querySelector(".form").classList.toggle("myStyle");;
+
             Navigate("/myprofile")
         
     }
@@ -61,11 +108,25 @@ function Myprofile() {
             <img src={image} alt=""  className="image"/>
             <h2>name:{data.name}</h2>
             <h2>emailid:{data.emailid}</h2>
-            <form onSubmit={handleSubmit}  className="upload">
-            <input type="file" className="upload" onChange={handleFileChange}/><br />
-            <button type="submit" className="uplaodbtn">Upload File</button><br /><br /><br />
-            </form>
 
+
+        <form onSubmit={handleprofile} className='form myStyle'>
+            <h4 className="up">update profile</h4>
+            <p onClick={showform} className='p'>&times;</p>
+            <input type="text" name='name'  placeholder='ENTER NAME.'  onChange={Name} /><br />
+            <input type="email" name='emailid' placeholder='ENTER EMAIL.'  onChange={email} /><br />
+            <button type="submit" className='updatebtn'>Update</button><br />
+
+        </form>
+
+
+            <form onSubmit={handleSubmit}  className="upload update myStyle">
+            <h2 className="up">upload image</h2>
+            <input type="file" className="upload"  onChange={handleFileChange}/><br />
+            <button type="submit" className="uplaodbtn">Upload</button><br /><br /><br />
+            </form>
+            <button className="uplaodbtn" onClick={uploadimage} >Upload-image</button>
+            <button className="uplaodbtn" onClick={showform} >Update-Profile</button>
 </div>
            
 

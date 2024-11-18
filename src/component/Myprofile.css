@@ -1,9 +1,29 @@
+.update{
+    border: 2px solid gray;
+    background-color: white;
+    height: 300px;
+    width:230px;
+    position: fixed;
+    top: 70px;
+    left: 42%;
+    text-align: center;
+    border-radius: 4px;
+}
+
+
+#upload{
+  width:10px!important;
+}
+
 .photo{
     margin-top: 200px;
     background-color:#13294B;
 
     /* background-color:#36412fda; */
     color: white;
+}
+.up{
+    color: black !important;
 }
 .image{
     margin-top: -60px;

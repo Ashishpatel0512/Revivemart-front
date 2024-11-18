@@ -9,7 +9,6 @@ body {
 .form{
     border: 2px solid gray;
     background-color: white;
-    height: 600px;
     width:700px;
     position: fixed;
     top: 70px;
@@ -27,6 +26,7 @@ input{
   background-color: green !important;
   color: white;
   width:100px;
+  margin-bottom: 10px !important;
 }
 .updatebtn:hover{
 font-size: medium;
@@ -71,6 +71,10 @@ table {
     margin-top: 0% !important;
     margin-right: 0% !important;
     padding-left: 95% !important;
+    
+  }
+  .p:hover{
+    cursor: pointer;
   }
   th {
     color: #424242; /* Charcoal Gray for Table Headers */
