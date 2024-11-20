@@ -1,5 +1,5 @@
 .product{
-    height:355px;
+    height:370px;
     width: 310px;
     border: 1px solid rgba(128, 128, 128, 0.578) ;
     text-align: center;
@@ -22,6 +22,10 @@ img{
     !important;
     border: 1px solid rgba(128, 128, 128, 0.578) ;
 
+}
+.sponcer{
+  margin-top: 0% !important;
+  margin-bottom: 0% !important;
 }
 .catagory{
   height: 60px !important;

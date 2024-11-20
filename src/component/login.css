@@ -13,10 +13,14 @@
     background-color:white;
     margin-top:100px;
     width: 280px;
-    height: 270px;
+    height: 280px;
     margin-left: 40%;
     border-radius: 4px;
     padding-left:10px;
+}
+.loglink{
+    font-size: smaller;
+    color: grey !important;
 }
 .log{
     width: 230px;

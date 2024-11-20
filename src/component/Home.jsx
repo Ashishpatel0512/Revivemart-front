@@ -17,12 +17,19 @@ import { data } from "autoprefixer";
     const [greater, Changgreater] = useState(undefined)
     const [less, Changless] = useState(undefined)
     const [searchitem,setsearch] = useState(undefined)
+    const [ads, setads] = useState([])
+    const [showads, setshowads] = useState([])
 
 
 
     useEffect(() => {
       setshowproduct(products);
     }, [products]); 
+
+    //last add
+    useEffect(() => {
+      setshowads([]);
+    }, [ads]); 
 
     //age filters
 
@@ -60,8 +67,11 @@ const search = (e) => {
   console.log("search",value)
   setsearch(value)
   const result = (products.filter(product => product.name.startsWith(`${value}`)));
+  const AD = (ads.filter(product => product.Productid.name.startsWith(`${value}`)));
+
   console.log("search",result); 
   setshowproduct(result)
+  setshowads(AD)
 };
 
 
@@ -86,7 +96,9 @@ console.log("catagorys"+catagoryss)
         })
         .then(res => res.json())
         .then((data)=>{
+          console.log("data",data)
           setproduct(data.list)
+          setads(data.ads)
           setuser(data.data)
           seturl(data.data.image.url)
           
@@ -104,7 +116,7 @@ console.log("catagorys"+catagoryss)
 
 console.log(user)
 console.log(products)
-
+console.log("ads",showads)
 
     return (
       <>
@@ -144,6 +156,20 @@ console.log(products)
         </div>
       
        <div className="div">
+        {/* ad */}
+       {showads.sort(() => 0.5 - Math.random()).map((product) => (
+        <Link to={`/show/${product.Productid._id}`} className='underline'>
+        <div className="product">
+        <p className='sponcer'>Sponsored</p>
+<img src={product.Productid.image[0].url} alt="" />
+<p className='item'>{product.Productid.name}</p>
+<p className='itemone'>{product.Productid.price} &#x20b9;</p>
+<p>{product.Productid.age} year/old</p>
+
+        </div>
+        </Link>
+      ))}
+      {/* ahi sudhi ad */}
       {showproducts.sort(() => 0.5 - Math.random()).map((product) => (
         <Link to={`/show/${product._id}`} className='underline'>
         <div className="product">

@@ -38,6 +38,7 @@ function Users(){
     return (    
 <>
 <Navbar user={user} url={url}></Navbar>
+<h3 className='header'>Users</h3>
 <div className='table'>
 <table>
   <tr>

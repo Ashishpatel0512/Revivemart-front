@@ -131,8 +131,8 @@ const handleSubmit = async (e) => {
           <p onClick={showform} className='p'>&times;</p>
             <input type="number" name='bidamount' placeholder='enter bid amount' onChange={bidamount} required/>
             <input type="text" name='message' placeholder='enter massage' onChange={message} required/>
-            <input type="text" name='buyer' placeholder='enter your name' onChange={buyer} required/>
-            <input type="tel" name='contact' placeholder='enter your mo no..' onChange={contact} required/>
+            {/* <input type="text" name='buyer' placeholder='enter your name' onChange={buyer} required/> */}
+            <input type="number" name='contact'placeholder='enter your mo no..' onChange={contact} required/>
             <input type="submit" className='bidbtn' value="submit"/>
           </form>
 

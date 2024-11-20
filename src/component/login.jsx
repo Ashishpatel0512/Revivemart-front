@@ -62,9 +62,9 @@ function Login() {
         <input type="email" className="log" name='emailid' placeholder="ENTER EMAIL" onChange={emailid} required/><br />
         <input type="password" className="log"  name='password' placeholder="ENTER PASSWORD" onChange={password} required /><br />
         <br /><br />
-        <button type="submit" className="logbtn">Login</button><br />
-        <Link to={"/resister"} >Register</Link><br />
-        <Link to={"/forgot"} >Forgot-password</Link><br />
+        <button type="submit" className="logbtn">Login</button><br /><br />
+        <Link to={"/resister"}  className="loglink">not a account?Register</Link><br />
+        <Link to={"/forgot"} className="loglink" >Forgot-password</Link><br />
 
       </form>}
       </div>    

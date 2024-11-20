@@ -24,6 +24,7 @@ import Logout from "./component/logout";
 import Error from "./component/error";
 import Unblock from "./component/unblock";
 import Forgot from "./component/forgot";
+import Ads from "./component/ads";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -83,6 +84,11 @@ const router = createBrowserRouter([
   {
     path: "/edit/:productid",
     element: <Update />
+
+  },
+  {
+    path: "/Advertize/:productid",
+    element: <Ads/>
 
   },
   {

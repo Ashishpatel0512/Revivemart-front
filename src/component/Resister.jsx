@@ -70,7 +70,7 @@ function Resister() {
         <input type="email" name='emailid' className="log" onChange={emailid} placeholder="enter emailid" required/><br />
         <input type="password" name='password' className="log" onChange={password} placeholder="enter password" required /><br />
         <button type="submit" className="logbtn">Register</button><br />
-        <Link to={"/"} >login</Link><br />
+        <Link to={"/"} className="loglink">Have already an account?login</Link><br />
 
       </form>}
       </div>

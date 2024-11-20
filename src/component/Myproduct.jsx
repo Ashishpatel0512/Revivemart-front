@@ -166,6 +166,9 @@ useEffect(()=>{
           </Link> &nbsp;  &nbsp; 
            <Link to={`/edit/${product._id}`}>
             <button className='editbtn'>Edit</button>
+          </Link> &nbsp;
+          <Link to={`/Advertize/${product._id}`}>
+            <button className='editbtn'>Ads</button>
           </Link> &nbsp; 
         </td>
       </tr>

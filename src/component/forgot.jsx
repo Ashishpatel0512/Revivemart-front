@@ -44,7 +44,7 @@ function Forgot() {
         console.log(data.email)
         Changemail(data.email)
         if (data.success) {
-          alert("welcome to revivemart")
+          alert("otp is sent in your email address please fill otp in 50 seconds")
           }
         else {
           console.log(data)
