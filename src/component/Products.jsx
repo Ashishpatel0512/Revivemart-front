@@ -96,7 +96,8 @@ function Products(){
   
   {showdata.reverse().map((product) => (
         <tr>
-       <td><img src={product.image[0].url} alt="" /></td>
+       <td><img src={product.image[0].url} alt="" /><img src={product.image[1].url} className="poimg2" alt="" /></td>
+       
         <td>{product.name}</td>
         <td>{product.price}</td>
         <td>{product.catagory}</td>

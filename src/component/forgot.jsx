@@ -48,7 +48,9 @@ function Forgot() {
           }
         else {
           console.log(data)
-          alert(data.error)
+          alert(data.message)
+          Changsuccess(null)
+
         }
 
       }
@@ -84,7 +86,7 @@ function Forgot() {
           console.log(data);
           Changsuccess(null);
           Changemail("");
-         alert("otp is invalid")
+         alert(data.message)
           
         }
 

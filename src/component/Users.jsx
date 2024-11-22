@@ -58,7 +58,7 @@ function Users(){
               <td>{data.status}</td>
               <td>
                 <button className="deletebtn"><Link to={`/block/${data._id}/` } className="deletebtn">Block</Link></button>&nbsp; &nbsp;
-                <button className="deletebtn"><Link to={`/unblock/${data._id}/` } className="deletebtn">Unlock</Link></button>
+                <button className="editbtn"><Link to={`/unblock/${data._id}/` } className="editbtn">Unlock</Link></button>
             </td>
 \
       </tr>

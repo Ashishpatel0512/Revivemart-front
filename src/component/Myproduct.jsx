@@ -6,6 +6,8 @@ import { Navigate } from 'react-router-dom';
 import Navbar from './Navbar';
 function FileUpload() {
     const [file, setFile] = useState(null);
+    const [file2, setFile2] = useState(null);
+
 const [name,Changname]=useState(null);
 const [descriptions,Changdescription]=useState(null);
 const [catagorys,Changcatagory]=useState(null);
@@ -16,6 +18,7 @@ const [others,Changother]=useState(null);
 const [data,setdata]=useState([]);
 const [user,setuser]=useState("undefined");
 const [url,seturl]=useState([]);
+const [ads,setads]=useState([]);
 
 
 useEffect(()=>{
@@ -27,6 +30,8 @@ useEffect(()=>{
     })
     .then(res => res.json())
     .then((data)=>{
+        console.log("data ads",data.ads)
+        setads(data.ads)
     setuser(data.user)
     setdata(data.data)
     seturl(data.user.image.url)
@@ -35,12 +40,19 @@ useEffect(()=>{
   },[])
   console.log(data)
   console.log(user)
+  console.log("adss",ads)
 
     // Function to handle file selection
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
         setFile(selectedFile);
         console.log("Selected file:", selectedFile); // Debug: check if the file is selected
+    };const handleFileChanges = (e) => {
+        const selectedFile = e.target.files[0];
+        setFile2(selectedFile);
+        console.log("Selected file 2:", selectedFile);
+        console.log(e.target.files) 
+        console.log(file)// Debug: check if the file is selected
     };
     const Name = (e) => {
         const selectedFile = e.target.value;
@@ -92,6 +104,8 @@ useEffect(()=>{
 
         const formData = new FormData();
         formData.append('file', file);
+        formData.append('file2', file2);
+
         formData.append('name', name);
         formData.append('description', descriptions);
         formData.append('price', prices);
@@ -109,13 +123,23 @@ useEffect(()=>{
                     "Authorization":localStorage.getItem("token")
 
                 }
-            });
-            alert("product uploaded successfully");
+            }).then((data)=>{
+                console.log(data,"data")
+                if(data.data.success){
+                    alert(data.data.message);
             const form=document.querySelector(".form").classList.toggle("myStyle");
             const table=document.querySelector("table").classList.toggle("opcity");
 
             <Navigate to="/myproduct" replace={true} />
 
+                }
+                else{
+                    console.log("error")
+                    console.log(data.error)
+                    alert("error is "+data.data.error)
+                }
+            });
+            
         } catch (error) {
             console.error("product upload error:", error);
         }
@@ -160,16 +184,20 @@ useEffect(()=>{
         <td>{product.status}</td>
         <td>{product.createAt}</td>
          <td>
-        <Link to={`/showbids/${product._id}`}>Showbids</Link> &nbsp;&nbsp; 
-        <Link to={`/delete/${product._id}`}>
-            <button className='deletebtn'>Delete</button>
-          </Link> &nbsp;  &nbsp; 
+        <Link to={`/showbids/${product._id}`} className='bidshows'>Showbids</Link> &nbsp;&nbsp;  
            <Link to={`/edit/${product._id}`}>
             <button className='editbtn'>Edit</button>
           </Link> &nbsp;
-          <Link to={`/Advertize/${product._id}`}>
+          {
+       ads.find(ad => ad.Productid._id ===product._id)?"":<Link to={`/Advertize/${product._id}`}>
             <button className='editbtn'>Ads</button>
-          </Link> &nbsp; 
+          </Link> 
+          }
+          
+          <Link to={`/delete/${product._id}`}>
+            <button className='deletebtn'>Delete</button>
+          </Link> &nbsp;  &nbsp;
+           
         </td>
       </tr>
       ))}
@@ -198,6 +226,7 @@ useEffect(()=>{
              </select><br />
             {/* <input type="text" name='other' onChange={other} /><br /> */}
             <input type="file" onChange={handleFileChange}  /><br />
+            <input type="file" onChange={handleFileChanges}  /><br />
 
             <button type="submit" className='updatebtn'>Save</button><br />
 

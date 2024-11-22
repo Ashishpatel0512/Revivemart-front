@@ -67,7 +67,7 @@ const search = (e) => {
   console.log("search",value)
   setsearch(value)
   const result = (products.filter(product => product.name.startsWith(`${value}`)));
-  const AD = (ads.filter(product => product.Productid.name.startsWith(`${value}`)));
+  const AD = (ads.filter(product => product.Productid.name.startsWith(`${value}`)&&product.Productid.status==="Approve"));
 
   console.log("search",result); 
   setshowproduct(result)
@@ -143,7 +143,7 @@ console.log("ads",showads)
           <p>Vehicals</p><br />
           <img src="https://i.pinimg.com/originals/c4/09/b3/c409b332604c0f8acb5dd0f0f569a8b8.png" alt=""  onClick={catagorysFr} className='catagory cc'/>
           <p>Funicher</p>
-          <img src="https://vectorified.com/images/filter-icon-1.png" className='catagory' alt="" onClick={showform} />
+          <img src="https://vectorified.com/images/filter-icon-1.png" className='catagory cd' alt="" onClick={showform} />
           <p>OTHER FILTERS</p>
 
           {/* <img src="https://cdn3.vectorstock.com/i/1000x1000/60/17/clothing-logo-template-vector-23896017.jpg" alt=""  onClick={catagorysFn} className='catagory cc'/>

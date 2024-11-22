@@ -96,7 +96,12 @@ td {
     background-color: #F5F5F5; /* Light Background for Header Row */
 
   }
-  
+  .bidshows{
+    color: #424242;
+  }
+  .bidshows:hover{
+    font-size: large;
+  }
   .input{
    width: 50px;
   }
@@ -116,15 +121,17 @@ td {
     font-weight: bolder;
   }
   .editbtn{
-    background-color: rgba(0, 128, 0, 0.463);
+    background-color: rgba(25, 205, 25, 0.692);
     color: white;
+    border: none;
   }
   .editbtn:hover{
     font-size: medium;
   }
   .deletebtn{
-    background-color:gray;
+    background-color:rgba(255, 0, 0, 0.716);
     color: white;
+    border: none;
   }
   .deletebtn:hover{
     font-size: medium;

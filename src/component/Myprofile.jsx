@@ -72,11 +72,20 @@ function Myprofile() {
                 headers:{
                     "Authorization":localStorage.getItem("token")
                     }
+            }).then((data)=>{
+                console.log(data.data)
+                if(data.data.success){
+                    alert(data.data.message);
+                    const form=document.querySelector(".upload").classList.toggle("myStyle");;
+        
+                    Navigate("/myprofile")
+                }
+                else{
+                    alert("error is"+data.data.error);
+ 
+                }
             });
-            alert("File uploaded successfully");
-            const form=document.querySelector(".upload").classList.toggle("myStyle");;
-
-            Navigate("/myprofile")
+           
         
     }
     const handleprofile = async (e) => {

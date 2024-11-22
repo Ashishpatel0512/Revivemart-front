@@ -6,6 +6,9 @@ import axios from 'axios';
 
 function Update(){
     const [file, setFile] = useState(null);
+    
+    const [file2, setFile2] = useState(null);
+
     const [names,Changname]=useState(null);
     const [descriptions,Changdescription]=useState(null);
     const [prices,Changprice]=useState(null);
@@ -43,6 +46,13 @@ function Update(){
     const selectedFile = e.target.files[0];
     setFile(selectedFile);
     console.log("Selected file:", selectedFile); // Debug: check if the file is selected
+};
+const handleFileChanges = (e) => {
+    const selectedFile = e.target.files[0];
+    setFile2(selectedFile);
+    console.log("Selected file 2:", selectedFile);
+    console.log(e.target.files) 
+    console.log(file)// Debug: check if the file is selected
 };
 const Name = (e) => {
     const selectedFile = e.target.value;
@@ -86,6 +96,8 @@ const handleSubmit = async (e) => {
 
     const formData = new FormData();
     formData.append('file', file);
+    formData.append('file2', file2);
+
     formData.append('name', names||data.name);
     formData.append('description', descriptions||data.description);
     formData.append('price', prices||data.price);
@@ -95,6 +107,8 @@ const handleSubmit = async (e) => {
     formData.append('other', others||data.other);
 
     console.log("FormData object:", formData.get('file')); // Debug: check if file is appended to FormData
+    console.log("FormData object:", formData.get('file2')); // Debug: check if file is appended to FormData
+
     console.log("FormData object:", formData.get('name')); // Debug: check if file is appended to FormData
     console.log("FormData object:", formData.get('description')); // Debug: check if file is appended to FormData
     console.log("FormData object:", formData.get('price'));
@@ -109,10 +123,18 @@ const handleSubmit = async (e) => {
                 "Authorization":localStorage.getItem("token")
 
             }
+        }).then((data)=>{
+            console.log(data.data)
+            if(data.data.success){
+            alert(data.data.message);
+            setsuccess("true");
+            }
+            else{
+                alert("error is"+data.data.error)
+            }
         });
         
-        alert("product update successfully");
-        setsuccess("true");
+        
     } catch (error) {
         console.error("File update error:", error);
     }
@@ -144,6 +166,8 @@ console.log(descriptions)
             {/* <input type="text" name='other'value={others==null?data.other:others} onChange={other} /><br /> */}
             {/* <img src={url} alt="" className="formimg" /><br /> */}
             <input type="file" onChange={handleFileChange}  /><br />
+            <input type="file" onChange={handleFileChanges}  /><br />
+
             <button type="submit" className="updatebtn">Update</button><br />
         </form>
         </div>

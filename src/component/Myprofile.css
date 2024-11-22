@@ -32,6 +32,12 @@
 }
 
 .uplaodbtn{
+    background-color:green;
+    color: white;
+    font-size:medium;
+    border: 2px solid white;
+}
+.uplaodbtn:hover{
     background-color: rgb(25, 205, 25);
     color: white;
     font-size: larger;

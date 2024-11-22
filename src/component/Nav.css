@@ -58,6 +58,9 @@ body{
 .list{
     color: azure;
     text-decoration: none;
+    font-size: large;
+}
+.list:hover{
     font-size: larger;
 }
 .profileimg{

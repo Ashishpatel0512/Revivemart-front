@@ -13,6 +13,9 @@ function Show() {
   const [user, setuser] = useState([])
   const [users, setusers] = useState([])
   const [url, seturl] = useState("")
+    const [url2, seturl2] = useState("")
+    const [showurl, setshowurl] = useState("")
+
   const [bidamounts,Changamount]=useState(null);
   const [messages,Changmessage]=useState(null);
   const [buyers,Changbuyer]=useState(null);
@@ -34,8 +37,10 @@ function Show() {
         setuser(listing.data.User[0])
         setusers(listing.user)
         seturls(listing.user.image.url)
-
+ setshowurl(listing.data.image[0].url)
         seturl(listing.data.image[0].url)
+        seturl2(listing.data.image[1].url)
+
       });
   }, [])
 
@@ -67,6 +72,12 @@ const contact = (e) => {
 const showform = async (e) => {
   const form=document.querySelector(".bidform").classList.toggle("myStyle");;
   console.log(form)
+ }
+ const imgchange2 = async (e) => {
+  setshowurl(url2);
+ }
+ const imgchange1 = async (e) => {
+  setshowurl(url);
  }
 
 // Function to handle file upload
@@ -109,22 +120,28 @@ const handleSubmit = async (e) => {
     <Navbar user={users}  url={urls}></Navbar>
       <div className="grid-container">
         <div className='first' >
-          <img className='img' src={url} alt="" /><br />
+          <img className='img' src={showurl} alt="" /><br />
+          <img className='img1' src={url} alt="" onClick={imgchange1} />
+          <img className='img1' src={url2} alt="" onClick={imgchange2} /><br />
+
           <p className='date'>Added On</p>
           <p className='date'>{product.createAt}</p>
         </div>
-        <div>
+        <div className='detailsdata'>
 
-          <h1>Details</h1><hr />
-          <h4>{product.name}</h4>
+          <h3 className='nametitle'>{product.name}</h3><hr />
+          <h5>Details</h5>
           <p>price:{product.price}</p>
-          <p>description:{product.description}</p>
           <p>catagories:{product.catagory}</p>
           <p>other:{product.other}</p>
-          <p>user:{user.name}</p>
-          <hr />
-          <p>emailid:{user.emailid}</p>
           <p>location:{product.location}</p>
+          <hr />
+          <h5>Description</h5>
+          <p>{product.description}</p>
+          <hr />
+          <h5>OwnerInfo</h5>
+          <p>emailid:{user.emailid}</p>
+          <p>user:{user.name}</p>
           <hr />
           <form action="" className='bidform myStyle' onSubmit={handleSubmit}>
             <h4>Add Bids</h4>

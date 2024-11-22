@@ -10,6 +10,9 @@
     /* text-decoration:none !important; */
     
 }
+.product:hover{
+  border: 1px solid black ;
+}
 .filt{
   margin-top: -100px !important;
   border-right: 1px solid gray;
@@ -43,6 +46,10 @@ img{
   border:2px solid #13294B;
   cursor: pointer;
 
+}
+.cd:hover{
+  border:2px solid #13294B;
+  cursor: pointer;
 }
 .cc:hover {
   border:2px solid #13294B;
