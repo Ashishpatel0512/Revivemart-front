@@ -129,7 +129,7 @@ console.log("ads",showads)
         value={searchitem}
         onChange={search}
         placeholder="Search here..."
-        style={{ position: "fixed" ,top:"80px",marginBottom:"-100px", marginLeft:"20%",adding: "8px", fontSize: "25px", width: "1000px",height:"30px",backgroundColor:"white" }}
+        style={{ position: "fixed" ,top:"80px",marginBottom:"-100px", marginLeft:"20%",padding: "5px 8px 5px 18px", fontSize: "25px", width: "1000px", border: "1px solid lightgrey", borderRadius: "25px", fontSize:"18px", color: "gray" }}
       />
           </div>
       <br />

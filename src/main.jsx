@@ -25,6 +25,7 @@ import Error from "./component/error";
 import Unblock from "./component/unblock";
 import Forgot from "./component/forgot";
 import Ads from "./component/ads";
+import Showads from "./component/showads";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -119,6 +120,11 @@ const router = createBrowserRouter([
   {
     path: "/admin/Users",
     element: <Users />
+
+  },
+  {
+    path: "/showads",
+    element: <Showads/>
 
   },
   {

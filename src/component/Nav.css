@@ -50,7 +50,7 @@ body{
     position: fixed;
     top: 90px;
     right: 20px;
-   height: 34%;
+    border-radius: 5px;
 }
 .admindash{
     font-size:6px !important;
