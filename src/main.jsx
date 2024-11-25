@@ -26,6 +26,9 @@ import Unblock from "./component/unblock";
 import Forgot from "./component/forgot";
 import Ads from "./component/ads";
 import Showads from "./component/showads";
+import AdsApprove from "./component/adsapprove";
+import Adsreject from "./component/adsreject";
+import AdminDashbord from "./component/adminDashbord";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -98,8 +101,18 @@ const router = createBrowserRouter([
 
   },
   {
+    path: "/ad/approve/:productid",
+    element: <AdsApprove/>
+
+  },
+  {
     path: "/reject/:productid",
     element: <Reject />
+
+  },
+  {
+    path: "/ad/reject/:productid",
+    element: <Adsreject />
 
   },
   {
@@ -130,6 +143,11 @@ const router = createBrowserRouter([
   {
     path: "/error",
     element: <Error />
+
+  },
+  {
+    path: "/admin",
+    element: <AdminDashbord />
 
   },
 ]);

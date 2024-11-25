@@ -26,8 +26,10 @@ function Navbar({user,url}){
         </div>
         {user.role=="Admin"?
         <div className='dropdown myStyle'><hr />
+            <Link to={"/admin"} className='list'>DASHBOARD</Link><br /><br /><hr />
             <Link to={"/admin/products"} className='list'>PRODUCTS</Link><br /><br /><hr />
             <Link to={"/admin/users"} className='list'>USERS</Link><br /><br /><hr />
+            <Link to={"/showads"} className='list'>SPONSORED</Link><br /><br /><hr />
             <Link to={"/logout"} className='list'>LOGOUT</Link><br /><br /><hr />
 
        </div>:

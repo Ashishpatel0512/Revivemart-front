@@ -7,6 +7,7 @@ function Login() {
   const [emails, Changemail] = useState(null);
   const [passwords, Changpassword] = useState(null);
   const [success, Changsuccess] = useState(null);
+  const [role, Changrole] = useState(null);
 
 
   const emailid = (e) => {
@@ -33,8 +34,10 @@ function Login() {
     })
       .then(res => res.json())
       .then((data) => {
-        console.log(data.success, data.token)
+        console.log("loginsidedata",data.success, data.token,data.userrole)
         Changsuccess(data.success)
+        //role add
+        Changrole(data.userrole)
         if (data.success) {
           localStorage.setItem("token", data.token);
           console.log("welcome")
@@ -54,6 +57,18 @@ function Login() {
 
 
   }
+
+  //last add role and  below condition only admin 
+  console.log("userrole",role)
+
+  if(role=="Admin"){
+    return (
+       <>
+       <Navigate to="/admin" replace={true} />
+       </>
+    )
+   }
+  
   return (
     <>
     <div className="body">

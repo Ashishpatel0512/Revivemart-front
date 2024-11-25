@@ -66,9 +66,8 @@ function Showads(){
     return (
 <>
 <Navbar user={user} url={url}></Navbar>
-<h3 className='header'>Products</h3>
+<h3 className='header'>Show Sponsored</h3>
 <div className='table'>
-<button onClick={showform}  className='new'><b>Filters</b></button>
 <table>
   <tr>
   <th scope="col">products</th>
@@ -92,8 +91,8 @@ function Showads(){
         <td>{product.status}</td>
         <td>{product.Productid.createAt}</td>
         <td>
-<button className="editbtn"><Link to={`ads/approve/${product.Productid._id}`} className="editbtn">Approve</Link></button><br /> <br />
-<button className="deletebtn"><Link to={`ads/reject/${product.Productid._id}`} className="deletebtn">Reject</Link></button>
+<button className="editbtn"><Link to={`/ad/approve/${product._id}`} className="editbtn">Approve</Link></button><br /> <br />
+<button className="deletebtn"><Link to={`/ad/reject/${product._id}`} className="deletebtn">Reject</Link></button>
 
         </td>
 

@@ -67,7 +67,7 @@ const search = (e) => {
   console.log("search",value)
   setsearch(value)
   const result = (products.filter(product => product.name.startsWith(`${value}`)));
-  const AD = (ads.filter(product => product.Productid.name.startsWith(`${value}`)&&product.Productid.status==="Approve"));
+  const AD = (ads.filter(product => product.Productid.name.startsWith(`${value}`)&&(product.Productid.status==="Approve"&&product.status==="Approve")));
 
   console.log("search",result); 
   setshowproduct(result)

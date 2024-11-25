@@ -9,7 +9,16 @@ function Users(){
     const [data,setdata]=useState([]);
     const [user,setuser]=useState([]);
     const [url,seturl]=useState([]);
+    //add
+    const [searchitem,setsearch] = useState(undefined)
+    const [showdata,setshowdata] = useState([])
+//
 
+//add
+    useEffect(() => {
+        setshowdata(data);
+      }, [data]); 
+  //
 
     useEffect(()=>{
         fetch(`http://localhost:3001/userdata`,{
@@ -26,6 +35,19 @@ function Users(){
         );
       },[])
 
+      //add
+      const search = (e) => {
+        let value=e.target.value;
+        console.log("search",value)
+        setsearch(value)
+        const result = (data.filter(product => product.emailid.startsWith(`${value}`)));
+      
+        console.log("search",result); 
+        setshowdata(result)
+      };
+//
+
+
     console.log(data)
     if(user.role=="User"){
      return (
@@ -38,6 +60,19 @@ function Users(){
     return (    
 <>
 <Navbar user={user} url={url}></Navbar>
+<br />
+{/* add */}
+<div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+      <input
+        type="text"
+        name="search"
+        value={searchitem}
+        onChange={search}
+        placeholder="Search Emailid.."
+        style={{ position: "fixed" ,top:"80px",marginBottom:"-100px", marginLeft:"20%",padding: "5px 8px 5px 18px", fontSize: "25px", width: "1000px", border: "1px solid lightgrey", borderRadius: "25px", fontSize:"18px", color: "gray" }}
+      />
+          </div>
+          {/* // */}
 <h3 className='header'>Users</h3>
 <div className='table'>
 <table>
@@ -49,8 +84,8 @@ function Users(){
             <th scope="col">Action</th>
 
   </tr>
-  
-  {data.reverse().map((data) => (
+  {/* add chage data to show data */}
+  {showdata.reverse().map((data) => (
         <tr>
        <th scope="row"><img src={data.image.url} alt=""  height="30px" width="30px"/></th>
               <td>{data.name}</td>
